@@ -24,24 +24,6 @@ Este é meu portfólio profissional, desenvolvido com React, TypeScript e Tailwi
 
 Este é meu portfólio profissional, desenvolvido com React, TypeScript e TailwindCSS, apresentando minhas skills, projetos, serviços e formação acadêmica.
 
-## ✨ Funcionalidades
-
-- Apresentação animada e responsiva
-- Carrossel de skills com efeito glassmorphism
-- Seção de projetos (em andamento)
-- Serviços oferecidos (sites, cardápios digitais, landing pages)
-- Formação acadêmica destacada
-- Navegação suave entre seções
-- Footer com créditos
-
-## � Tecnologias Utilizadas
-
-- [React](https://react.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vitejs.dev/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [ESLint](https://eslint.org/)
-
 ##  Como rodar o projeto
 
 1. Clone o repositório:
@@ -60,7 +42,7 @@ Este é meu portfólio profissional, desenvolvido com React, TypeScript e Tailwi
 
 ## 📁 Estrutura de Pastas
 
-- `src/components/` — Componentes reutilizáveis (Header, Skills, Services, Education, Footer, etc)
+- `src/components/` — Componentes reutilizáveis (Header, Skills, Services, Education, Footer)
 - `src/layouts/` — Layout principal da aplicação
 - `src/pages/` — (caso queira adicionar rotas no futuro)
 - `public/` — Arquivos estáticos
