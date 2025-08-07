@@ -78,4 +78,4 @@ Entre em contato pelo botão "Let’s Connect" (WhatsApp) no topo da página.
 
 ---
 
-Desenvolvido com 💜 por Danyel Henrique
+Desenvolvido por Danyel Henrique
