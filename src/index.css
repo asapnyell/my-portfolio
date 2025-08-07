@@ -2,13 +2,10 @@ html {
   scroll-behavior: smooth;
 }
   .animate-pulse-glow {
-    animation: pulseGlow 1.2s ease-in-out infinite alternate;
+    animation: pulseGlow 2.5s ease-in-out infinite alternate;
   }
   .animate-slide-left {
     animation: slideLeft 1.1s cubic-bezier(0.4,0,0.2,1) both;
-  }
-  .animate-pulse-glow {
-    animation: pulseGlow 2.5s ease-in-out infinite alternate;
   }
 @keyframes slideLeft {
   from { opacity: 0; transform: translateX(-60px); }
