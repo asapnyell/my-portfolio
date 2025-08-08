@@ -32,7 +32,7 @@ const PresentationSection: React.FC = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-60 h-56 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 blur-2xl opacity-70 animate-pulse-glow" />
         </div>
-        <div className="relative z-10 w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden shadow-2xl border-4 border-indigo-400 bg-gray-900 flex items-center justify-center">
+        <div className="relative z-10 w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden shadow-2xl border-4 border-indigo-400 bg-gray-900 flex items-center justify-center transition-transform duration-450 hover:scale-150">
           {/* Substitua a imagem abaixo pela sua foto/avatar */}
           <img
             src={avatarImg}

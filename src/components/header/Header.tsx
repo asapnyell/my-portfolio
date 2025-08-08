@@ -71,7 +71,7 @@ const Header = () => {
 
         {/* Botão menu mobile */}
         <button
-          className="md:hidden flex items-center justify-center w-10 h-10 rounded focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          className="md:hidden fixed top-2 right-4 z-50 justify-center w-10 h-10 rounded focus:outline-none focus:ring-2 focus:ring-indigo-400"
           aria-label="Abrir menu"
           onClick={() => setMenuOpen((open) => !open)}
         >

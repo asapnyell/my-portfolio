@@ -7,7 +7,7 @@ const Projects: React.FC = () => {
         Projetos
       </h2>
       <div className="flex flex-col items-center justify-center min-h-[120px]">
-        <span className="text-xl font-semibold text-white animate-pulse">Em andamento...</span>
+        <span className="text-xl font-semibold text-white animate-pulse">building...</span>
       </div>
     </section>
   );
