@@ -1,4 +1,5 @@
 import React from "react";
+import avatarImg from "../../assets/SsobreMim.jpg";
 
 const PresentationSection: React.FC = () => {
   return (
@@ -29,12 +30,12 @@ const PresentationSection: React.FC = () => {
       {/* Espaço para imagem com fundo brilhante */}
       <div className="flex-1 flex items-center justify-center relative min-h-[260px] md:min-h-[340px]">
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-56 h-56 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 blur-2xl opacity-70 animate-pulse-glow" />
+          <div className="w-60 h-56 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 blur-2xl opacity-70 animate-pulse-glow" />
         </div>
         <div className="relative z-10 w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden shadow-2xl border-4 border-indigo-400 bg-gray-900 flex items-center justify-center">
           {/* Substitua a imagem abaixo pela sua foto/avatar */}
           <img
-            src="https://avatars.githubusercontent.com/u/9919?v=4"
+            src={avatarImg}
             alt="Avatar de Asapnyel"
             className="w-full h-full object-cover animate-fade-in"
           />

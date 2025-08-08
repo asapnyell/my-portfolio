@@ -1,4 +1,5 @@
 import React from "react";
+import avatarImg from "../../assets/logoUni.jpg";
 
 const Education: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const Education: React.FC = () => {
         >
           <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center overflow-hidden border-2 border-indigo-400 group-hover:scale-110 transition-transform duration-300">
             <img
-              src="/src/assets/logoUni.jpg"
+              src={avatarImg}
               alt="Logo da Instituição"
               className="w-40 h-40 object-contain opacity-80"
             />

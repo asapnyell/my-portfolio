@@ -43,12 +43,7 @@ const skills = [
       <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10"><rect width="48" height="48" rx="10" fill="#3776AB"/><text x="24" y="32" textAnchor="middle" fontSize="18" fill="#fff" fontFamily="Arial">Py</text></svg>
     ),
   },
-  {
-    name: "Git",
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10"><rect width="48" height="48" rx="10" fill="#F05032"/><path d="M34 26a2 2 0 1 1-2-2l-6-6-2 2 6 6a2 2 0 1 1 2 2z" fill="#fff"/></svg>
-    ),
-  },
+  
 ];
 
 
