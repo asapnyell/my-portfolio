@@ -8,6 +8,7 @@ import Education from "./components/education/Education";
 import Projects from "./components/projects/Projects";
 import Services from "./components/services/Services";
 import Footer from "./components/Footer/Footer";
+import Contact from "./components/contact/Contact";
 
 
 function FadeInOnScroll({ children, className = "", style = {}, padding = "" }: { children: React.ReactNode; className?: string; style?: React.CSSProperties; padding?: string }) {
@@ -59,7 +60,9 @@ function App() {
           <Services/>
         </div>
         <Education/>
+        <Contact/>
         <Footer/>
+        
       </div>
     </MainLayout>
   );
