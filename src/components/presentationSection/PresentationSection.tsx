@@ -1,5 +1,5 @@
 import React from "react";
-import avatarImg from "../../assets/SsobreMim.jpg";
+import avatarImg from "../../assets/sobremimtwo.jpg";
 
 const PresentationSection: React.FC = () => {
   return (
