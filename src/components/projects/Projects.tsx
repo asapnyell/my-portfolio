@@ -31,11 +31,12 @@ const Projects: React.FC = () => {
             className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:-translate-y-2"
           >
             {/* Imagem do Projeto */}
-            <div className="w-full h-48">
+            <div className="w-full h-45">
               <img
                 src={project.imageUrl}
                 alt={`Imagem do projeto ${project.title}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover "
+                loading="lazy"
                 // Fallback para caso a imagem não carregue
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;

@@ -54,7 +54,7 @@ const Skills: React.FC = () => {
     const carousel = carouselRef.current;
     if (!carousel) return;
     let animationFrame: number;
-    const speed = 1.2; // pixels per frame
+    const speed = 1.3; // pixels per frame
 
     const scroll = () => {
       if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
@@ -72,7 +72,7 @@ const Skills: React.FC = () => {
   const cards = [...skills, ...skills];
 
   return (
-    <section className="w-full py-12 flex flex-col items-center animate-fade-in">
+    <section className="w-full py-11 flex flex-col items-center animate-fade-in">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-slide-down">
         Minhas Skills
       </h2>

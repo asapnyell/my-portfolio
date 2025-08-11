@@ -4,7 +4,7 @@ import avatarImg from "../../assets/sobremimtwo.jpg";
 const PresentationSection: React.FC = () => {
   return (
     <section
-      className="flex flex-col md:flex-row items-center justify-center min-h-[70vh] w-full px-4 md:px-12 gap-10 md:gap-20 animate-fade-in"
+      className="flex flex-col md:flex-row items-center justify-center min-h-[70vh] w-full px-4 md:px-20 gap-10 md:gap-20 animate-fade-in"
     >
       {/* Texto de apresentação */}
       <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-6 animate-slide-left">

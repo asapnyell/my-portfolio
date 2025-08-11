@@ -40,7 +40,7 @@ const Header = () => {
         {/* Logo / Nome */}
         <a 
         href="#home"
-          className="text-2xl font-extrabold tracking-wide text-white select-none cursor-pointer"
+          className="text-2xl font-extrabold tracking-wide text-white select-none cursor-pointer relative transition-colors duration-200 px-1 hover:text-indigo-400 focus:text-indigo-400 "
           onClick={e => handleNavClick(e, "#home")}
         >
           Asapnyel.dev
