@@ -38,9 +38,13 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo / Nome */}
-        <div className="text-2xl font-extrabold tracking-wide text-white select-none">
+        <a 
+        href="#home"
+          className="text-2xl font-extrabold tracking-wide text-white select-none cursor-pointer"
+          onClick={e => handleNavClick(e, "#home")}
+        >
           Asapnyel.dev
-        </div>
+        </a>
 
         {/* Navegação Desktop */}
         <nav className="hidden md:flex gap-8 text-white font-medium">
