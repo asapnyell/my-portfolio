@@ -1,5 +1,5 @@
 import React from "react";
-import avatarImg from "../../assets/sobremimtwo.jpg";
+import avatarImg from "../../assets/sobremimtwo.webp";
 
 const PresentationSection: React.FC = () => {
   return (
@@ -41,7 +41,9 @@ const PresentationSection: React.FC = () => {
           <img
             src={avatarImg}
             alt="Avatar de Asapnyel"
-            className="w-full h-full object-cover animate-fade-in "
+            className="w-full h-full object-cover animate-fade-in"
+            rel="preload"
+            decoding="async"
           />
         </div>
       </div>

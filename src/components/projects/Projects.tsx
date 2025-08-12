@@ -1,6 +1,6 @@
 import React from "react";
-import projeto1Img from "/images/projects/projeto1.png";
-import projeto2Img from "/images/projects/projeto2.png";
+import projeto1Img from "/images/projects/projeto1.webp";
+import projeto2Img from "/images/projects/projeto2.webp";
 
 const projectData = [
   {
