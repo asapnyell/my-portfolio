@@ -36,7 +36,7 @@ const Projects: React.FC = () => {
                 src={project.imageUrl}
                 alt={`Imagem do projeto ${project.title}`}
                 className="w-full h-full object-cover"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 // Fallback para caso a imagem não carregue
                 onError={(e) => {
