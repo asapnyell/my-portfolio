@@ -2,8 +2,16 @@ import React from "react";
 import { motion } from "framer-motion";
 import projeto1Img from "/images/projects/projeto1.webp";
 import projeto2Img from "/images/projects/projeto2.webp";
+import projeto3img from "/images/projects/projeto3img.webp";
+import projeto4img from "/images/projects/projeto4.webp";
 
 const projectData = [
+{
+    imageUrl: projeto3img,
+    title: 'Site Para Desenvolvedor Web',
+    description: 'Desenvolvi uma landing page pessoal para um desenvolvedor web, com design moderno e atraente, para apresentar seus serviços, portfólio e contato direto com os clientes. A página oferece uma navegação fluida e responsiva, transmitindo confiança e profissionalismo.',
+    technologies: ['React', 'Tailwind CSS', 'TypeScript'],
+  },
   {
     imageUrl: projeto1Img,
     title: 'Landing Page Médica Veterinária',
@@ -11,13 +19,19 @@ const projectData = [
     technologies: ['React', 'Tailwind CSS', 'TypeScript'],
   },
   {
+    imageUrl: projeto4img,
+    title: 'E-Commerce Aparelhos Eletrônicos',
+    description: 'Desenvolvi uma plataforma de e-commerce para venda de aparelhos eletrônicos, com design moderno e funcional. A loja virtual conta com um sistema de filtragem avançado, carrinho de compras e integração com métodos de pagamento populares, proporcionando uma experiência de compra fluida e segura.',
+    technologies: ['React', 'Tailwind CSS', 'TypeScript'],
+  },
+
+{
     imageUrl: projeto2Img,
     title: 'Landing Page Barbearia',
     description: 'Criei uma landing page pessoal para um barbeiro, com visual moderno e atraente que destaca seus serviços exclusivos e facilita o agendamento. O site é responsivo, garantindo ótima experiência tanto em smartphones quanto em desktops, alta performance e facilidade de manutenção.',
     technologies: ['React', 'Tailwind CSS', 'TypeScript'],
   },
 ];
-
 export const ProjectsPage: React.FC = () => {
   return (
     <section id="projects" className="w-full py-12 flex flex-col items-center animate-fade-in">

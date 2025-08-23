@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Projects: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,12 +16,12 @@ const Projects: React.FC = () => {
         <span>Meus Projetos</span>
       </button>
 
-      <a
-        href="/my-portfolio/projects"
+      <Link
+        to="/ProjectsPage"
         className="bg-white/10 backdrop-blur-md border border-white/30 rounded-xl px-6 py-2 text-white font-semibold shadow-lg hover:bg-white/30 transition animate-pulse"
       >
         Ver todos os projetos
-      </a>
+      </Link>
     </section>
   );
 };

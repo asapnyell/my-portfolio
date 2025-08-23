@@ -1,11 +1,12 @@
 
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projetos" },
-  { href: "#services", label: "Serviços" },
+
 ];
 
 const Header = () => {
@@ -38,13 +39,12 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo / Nome */}
-        <a 
-        href="#home"
+        <Link 
+        to="/"
           className="text-2xl font-extrabold tracking-wide text-white select-none cursor-pointer relative transition-colors duration-200 px-1 hover:text-indigo-400 focus:text-indigo-400 "
-          onClick={e => handleNavClick(e, "#home")}
         >
           Asapnyel.dev
-        </a>
+        </Link>
 
         {/* Navegação Desktop */}
         <nav className="hidden md:flex gap-8 text-white font-medium">
