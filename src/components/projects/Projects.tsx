@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import projeto1Img from "/images/projects/projeto1.webp";
 import projeto2Img from "/images/projects/projeto2.webp";
 
@@ -17,17 +18,21 @@ const projectData = [
   },
 ];
 
-const Projects: React.FC = () => {
+export const Projects: React.FC = () => {
   return (
     <section id="projects" className="w-full py-12 flex flex-col items-center animate-fade-in">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-slide-down">
         Projetos
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 md:px-8 max-w-5xl">
-       {projectData.map((project, index) => (
-          <div
+        {projectData.map((project, index) => (
+          <motion.div
             key={index}
-            // Estilos do Glassmorphism
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.3 }}
+            // Estilos do Glassmorphism com Tailwind
             className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:-translate-y-2"
           >
             {/* Imagem do Projeto */}
@@ -68,11 +73,9 @@ const Projects: React.FC = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
   );
 };
-
-export default Projects;
