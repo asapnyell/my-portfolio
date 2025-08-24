@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link,useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -12,22 +12,44 @@ const navLinks = [
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  useEffect(() => {
+    useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
 
-  // Scroll suave para a seção
+  useEffect(() => {
+    if (location.pathname === "/") {
+      const target = sessionStorage.getItem("scrollTarget");
+      if (target) {
+        const el = document.getElementById(target);
+        if (el) {
+          setTimeout(() => {
+            el.scrollIntoView({ behavior: "smooth" });
+            sessionStorage.removeItem("scrollTarget");
+          }, 100); // pequeno delay p/ garantir que o DOM carregou
+        }
+      }
+    }
+  }, [location.pathname]);
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMenuOpen(false);
-    const id = href.replace('#', '');
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    const id = href.replace("#", "");
+
+    if (location.pathname !== "/") {
+      // se não estiver na Home, salvar alvo e redirecionar
+      sessionStorage.setItem("scrollTarget", id);
+      navigate("/");
+    } else {
+      // se já estiver na Home, só faz o scroll
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
     }
   };
 
