@@ -4,7 +4,7 @@ import Header from "../components/header/Header";
 
 
 interface MainLayoutProps {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 
