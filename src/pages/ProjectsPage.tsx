@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import projeto1Img from "/images/projects/projeto1.webp";
 import projeto2Img from "/images/projects/projeto2.webp";
@@ -33,62 +33,99 @@ const projectData = [
 ];
 
 export const ProjectsPage: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: number) => {
+    const current = scrollRef.current;
+    if (current) {
+      const cardWidth = current.children[0]?.clientWidth || 0;
+      const gap = parseFloat(getComputedStyle(current).columnGap) || 0;
+      const scrollAmount = cardWidth + gap;
+      current.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="projects" className="w-full py-12 flex flex-col items-center animate-fade-in">
       <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-slide-down">
         Projetos
       </h2>
-      <div className="w-full max-w-5xl overflow-x-auto flex flex-row gap-6 px-4 md:px-8 scrollbar-hide snap-x snap-mandatory">
-        {projectData.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.3 }}
-            // Estilos do Glassmorphism com Tailwind
-            className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:-translate-y-2 flex-shrink-0 w-80 md:w-96 snap-start"
-          >
-            {/* Imagem do Projeto */}
-            <div className="w-full h-48">
-              <img
-                src={project.imageUrl}
-                alt={`Imagem do projeto ${project.title}`}
-                className="w-full h-full object-cover"
-                loading="eager"
-                decoding="async"
-                // Fallback para caso a imagem não carregue
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.onerror = null;
-                  target.src = 'https://placehold.co/600x400/1e1b4b/e0e7ff?text=Erro+ao+carregar';
-                }}
-              />
-            </div>
-
-            {/* Conteúdo do Card */}
-            <div className="p-6">
-              <h3 className="text-2xl font-bold text-white mb-3">
-                {project.title}
-              </h3>
-              <p className="text-gray-300 text-sm mb-4">
-                {project.description}
-              </p>
-
-              {/* Tecnologias usadas */}
-              <div className="flex flex-wrap gap-2 pt-2">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="bg-indigo-500/30 text-indigo-200 text-xs font-semibold px-3 py-1 rounded-full"
-                  >
-                    {tech}
-                  </span>
-                ))}
+      <div className="relative w-full max-w-5xl px-4 md:px-8">
+        <div
+          ref={scrollRef}
+          className="overflow-x-auto flex flex-row gap-6 scrollbar-hide snap-x snap-mandatory"
+        >
+          {projectData.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.3 }}
+              // Estilos do Glassmorphism com Tailwind
+              className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:-translate-y-2 flex-shrink-0 w-80 md:w-96 snap-start"
+            >
+              {/* Imagem do Projeto */}
+              <div className="w-full h-48">
+                <img
+                  src={project.imageUrl}
+                  alt={`Imagem do projeto ${project.title}`}
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                  decoding="async"
+                  // Fallback para caso a imagem não carregue
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.onerror = null;
+                    target.src = 'https://placehold.co/600x400/1e1b4b/e0e7ff?text=Erro+ao+carregar';
+                  }}
+                />
               </div>
-            </div>
-          </motion.div>
-        ))}
+
+              {/* Conteúdo do Card */}
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 text-sm mb-4">
+                  {project.description}
+                </p>
+
+                {/* Tecnologias usadas */}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-indigo-500/30 text-indigo-200 text-xs font-semibold px-3 py-1 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Setas para desktop */}
+        <button
+          onClick={() => scroll(-1)}
+          className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 items-center justify-center bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition"
+        >
+          &lt;
+        </button>
+        <button
+          onClick={() => scroll(1)}
+          className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 items-center justify-center bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition"
+        >
+          &gt;
+        </button>
+      </div>
+
+      {/* Indicador para mobile */}
+      <div className="md:hidden text-center mt-4 text-gray-300 flex items-center justify-center">
+        <span>Deslize para o lado para ver mais projetos</span>
+        <span className="ml-2">→</span>
       </div>
     </section>
   );
