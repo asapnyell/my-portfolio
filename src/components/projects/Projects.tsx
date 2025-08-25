@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
         to="/ProjectsPage"
         className="bg-white/10 backdrop-blur-md border border-white/30 rounded-xl px-6 py-2 text-white font-semibold shadow-lg hover:bg-white/30 transition animate-pulse"
       >
-        Ver todos os projetos
+        Ver todos os projetos...
       </Link>
     </section>
   );

@@ -8,6 +8,7 @@ import { ProjectsPage } from "./pages/ProjectsPage";
 
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/contact/Contact";
+import Services from "./components/services/Services";
 
 export function App() {
   return (
@@ -29,7 +30,9 @@ export function App() {
                 <div id="projects">
                   <Projects />
                 </div>
-                <div id="services"></div>
+                <div id="services">
+                  <Services />
+                </div>
                 <Education />
                 <Contact />
                 <Footer />
