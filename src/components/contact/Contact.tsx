@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa'; // Import the icons
 
 const Contacts: React.FC = () => {
   return (
-    <div className="flex justify-center items-center min-h-[120px] gap-4">
+    <div id="contact" className="flex justify-center items-center min-h-[120px] gap-4">
       
 
       <a
